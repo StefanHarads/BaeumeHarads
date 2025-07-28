@@ -3,79 +3,56 @@
 <html lang="de">
 <head>
     <meta charset="utf-8">
-    <title>Sachverständigenbüro für Baumkontrolle</title>
+    <title>Willkommen bei der BaumApp</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         body {
             font-family: Arial, sans-serif;
+            background: #eef8ee;
             margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #d3f4d1;
-            padding: 1em;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
+            padding: 2em;
             text-align: center;
         }
-        header img {
-            height: 80px;
-            margin: 0.5em;
+        img {
+            max-width: 200px;
+            margin-bottom: 1em;
         }
-        header h1 {
-            margin: 0.5em 0;
-            font-size: 1.5em;
+        h1 {
             color: #2b7a2b;
         }
-        main {
-            padding: 1em;
-            max-width: 800px;
+        p {
+            max-width: 600px;
             margin: auto;
+            color: #444;
+            font-size: 1.1em;
         }
-        .card {
-            background: white;
-            padding: 1.5em;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
-            margin-top: 1em;
-        }
-        a.button {
+        .button {
+            margin-top: 2em;
             display: inline-block;
-            margin-top: 1em;
             padding: 0.75em 1.5em;
             background: #2b7a2b;
             color: white;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
         }
-        a.button:hover {
-            background: #256b25;
-        }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.2em;
-            }
+        footer {
+            margin-top: 4em;
+            font-size: 0.9em;
+            color: #666;
         }
     </style>
 </head>
 <body>
-    <header>
-        <img src="/static/Logo.png" alt="Logo">
-        <h1>Sachverständigenbüro für Baumkontrolle</h1>
-    </header>
-    <main>
-        <div class="card">
-            <h2>Impressum</h2>
-            <p>&copy; Sachverständigenbüro für Baumkontrolle Stefan Nord<br>
-            Langenthalstraße 9 – 76848 Spirkelbach<br>
-            Email: <a href="mailto:info@forstarbeiten.com">info@forstarbeiten.com</a></p>
+    <img src="/static/Logo.png" alt="Logo">
+    <h1>Willkommen zur Baum-Such-App</h1>
+    <p>Diese Anwendung dient der gezielten Suche und Standortanzeige kontrollierter Bäume mittels ihrer UID. Nach dem Login können Sie eine UID eingeben und erhalten Standort, Karte und zugehörige Baumdaten.</p>
+    <a href="{{ url_for('login') }}" class="button">Zur Anmeldung</a>
 
-            <a class="button" href="/login">Zur Anwendung</a>
-        </div>
-    </main>
+    <footer>
+        <p>(c) Sachverständigenbüro für Baumkontrolle Stefan Nord<br>
+        Langenthalstraße 9 – 76848 Spirkelbach<br>
+        Email: info@forstarbeiten.com</p>
+    </footer>
 </body>
 </html>

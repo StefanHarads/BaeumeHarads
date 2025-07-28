@@ -60,6 +60,15 @@
         a:hover {
             background: #256b25;
         }
+        .uid-label {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #2b7a2b;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 4px;
+            box-shadow: 0 0 3px rgba(0,0,0,0.2);
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +86,14 @@
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '© OpenStreetMap'
         }).addTo(map);
-        L.marker([lat, lon]).addTo(map).bindPopup("Baum UID: " + uid).openPopup();
+
+        const marker = L.marker([lat, lon]).addTo(map);
+        marker.bindTooltip("UID: " + uid, {
+            permanent: true,
+            direction: 'top',
+            offset: [0, -10],
+            className: 'uid-label'
+        }).openTooltip();
 
         if (navigator.geolocation) {
             navigator.geolocation.watchPosition(function(position) {
