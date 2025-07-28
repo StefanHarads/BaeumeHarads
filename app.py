@@ -5,7 +5,7 @@ import sqlite3
 app = Flask(__name__)
 app.secret_key = 'dein-geheimer-schluessel'
 
-DB_PATH = 'Baum.db'
+DB_PATH = 'baeume.db'
 
 USERS = {
     'admin': 'passwort123',
