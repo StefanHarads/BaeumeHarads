@@ -46,7 +46,7 @@ def baum_suche():
         conn = sqlite3.connect(DB_PATH)
         conn.row_factory = sqlite3.Row
         cursor = conn.cursor()
-        cursor.execute("SELECT * FROM Baeume WHERE UID = ?", (uid,))
+        cursor.execute("SELECT * FROM imported_data WHERE UID = ?", (uid,))
         baum = cursor.fetchone()
         conn.close()
         if baum:
